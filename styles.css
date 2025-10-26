@@ -190,7 +190,17 @@ body.page{
   background:var(--legal-bg) !important;
 }
 
-/* === Contacto: links en celeste claro sobre fondo oscuro === */
-.contact a { color: #9fdcff; }
+/* === Contacto: links en celeste claro sobre fondo oscuro (sin subrayado) === */
+.contact a {
+  color: #9fdcff;
+  text-decoration: none;            /* quitar subrayado */
+}
 .contact a:hover,
-.contact a:focus { color: #e6f6ff; text-decoration: underline; }
+.contact a:focus {
+  color: #e6f6ff;
+  text-decoration: none;            /* mantener sin subrayado en hover/focus */
+}
+.contact a:focus-visible {
+  outline: 2px solid currentColor;  /* accesibilidad sin subrayado */
+  outline-offset: 2px;
+}
